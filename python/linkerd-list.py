@@ -18,19 +18,18 @@ class SingleLinkedList:
     self.tail = None
     return
 
+  def add_list_item(self, item):
+    # make sure item is a proper node
+    if not isinstance(item, ListNode):
+      item = ListNode(item)
 
-def add_list_item(self, item):
-  # make sure item is a proper node
-  if not isinstance(item, ListNode):
-    item = ListNode(item)
+    if self.head is None:
+      self.head = item
+    else:
+      self.tail.next = item
 
-  if self.head is None:
-    self.head = item
-  else:
-    self.tail.next = item
-
-  self.tail = item
-  return
+    self.tail = item
+    return
 
 
 # ===
